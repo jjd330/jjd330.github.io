@@ -6,19 +6,6 @@
 <title>Jimmy DeLaunay — Astrophysicist</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --purple: #7F77DD;
-    --purple-light: #EEEDFE;
-    --purple-dark: #3C3489;
-    --teal: #1D9E75;
-    --teal-light: #E1F5EE;
-    --coral: #D85A30;
-    --coral-light: #FAECE7;
-    --amber: #BA7517;
-    --amber-light: #FAEEDA;
-    --gray: #888780;
-    --gray-light: #F1EFE8;
-  }
   body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     background: #0a0a14;
@@ -26,20 +13,8 @@
     min-height: 100vh;
     overflow-x: hidden;
   }
-
-  /* Stars background */
-  .stars {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .star {
-    position: absolute;
-    border-radius: 50%;
-    background: white;
-    animation: twinkle var(--d, 3s) ease-in-out infinite alternate;
-  }
+  .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+  .star { position: absolute; border-radius: 50%; background: white; animation: twinkle var(--d, 3s) ease-in-out infinite alternate; }
   @keyframes twinkle { from { opacity: 0.2; } to { opacity: 1; } }
 
   nav {
@@ -49,192 +24,95 @@
     border-bottom: 0.5px solid rgba(127,119,221,0.25);
     padding: 0 2rem;
     display: flex; align-items: center; justify-content: space-between;
-    height: 56px;
-    z-index: 100;
+    height: 56px; z-index: 100;
   }
-  .nav-logo {
-    font-size: 15px; font-weight: 600;
-    color: #b8b3f0;
-    letter-spacing: 0.01em;
-  }
+  .nav-logo { font-size: 15px; font-weight: 600; color: #b8b3f0; letter-spacing: 0.01em; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    font-size: 13px; color: rgba(232,230,240,0.6);
-    text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase;
-    transition: color 0.2s;
-  }
+  .nav-links a { font-size: 13px; color: rgba(232,230,240,0.6); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: #b8b3f0; }
 
   main { position: relative; z-index: 1; }
 
-  /* Hero */
-  .hero {
-    min-height: 92vh;
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 6rem 2rem 4rem;
-    max-width: 900px; margin: 0 auto;
-  }
-  .hero-eyebrow {
-    font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--teal); margin-bottom: 1.25rem;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .hero-eyebrow::before {
-    content: ''; display: block;
-    width: 32px; height: 1px; background: var(--teal);
-  }
-  h1 {
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
-    font-weight: 700; line-height: 1.05;
-    color: #f0eeff;
-    margin-bottom: 1.5rem;
-  }
-  h1 span { color: var(--purple); }
-  .hero-desc {
-    font-size: 1.1rem; line-height: 1.8;
-    color: rgba(232,230,240,0.65);
-    max-width: 560px; margin-bottom: 2.5rem;
-  }
-  .hero-chips {
-    display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2.5rem;
-  }
-  .chip {
-    font-size: 12px; padding: 5px 14px;
-    border-radius: 999px;
-    border: 1px solid;
-    letter-spacing: 0.03em;
-  }
-  .chip-purple { border-color: var(--purple); color: #b8b3f0; background: rgba(127,119,221,0.1); }
-  .chip-teal   { border-color: var(--teal);   color: #6ddbb8; background: rgba(29,158,117,0.1); }
-  .chip-amber  { border-color: var(--amber);  color: #f5c96a; background: rgba(186,117,23,0.1); }
+  .hero { min-height: 92vh; display: flex; flex-direction: column; justify-content: center; padding: 6rem 2rem 4rem; max-width: 900px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: #1D9E75; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; }
+  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: #1D9E75; }
+  h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 700; line-height: 1.05; color: #f0eeff; margin-bottom: 1.5rem; }
+  h1 span { color: #7F77DD; }
+  .hero-desc { font-size: 1.1rem; line-height: 1.8; color: rgba(232,230,240,0.65); max-width: 560px; margin-bottom: 2.5rem; }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2.5rem; }
+  .chip { font-size: 12px; padding: 5px 14px; border-radius: 999px; border: 1px solid; letter-spacing: 0.03em; }
+  .chip-purple { border-color: #7F77DD; color: #b8b3f0; background: rgba(127,119,221,0.1); }
+  .chip-teal   { border-color: #1D9E75; color: #6ddbb8; background: rgba(29,158,117,0.1); }
+  .chip-amber  { border-color: #BA7517; color: #f5c96a; background: rgba(186,117,23,0.1); }
   .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn {
-    padding: 11px 26px; border-radius: 8px;
-    font-size: 14px; font-weight: 500; cursor: pointer;
-    text-decoration: none; border: none;
-    transition: transform 0.15s, opacity 0.15s;
-  }
+  .btn { padding: 11px 26px; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; border: none; transition: transform 0.15s, opacity 0.15s; display: inline-flex; align-items: center; gap: 8px; }
   .btn:hover { transform: translateY(-1px); opacity: 0.9; }
-  .btn-primary { background: var(--purple); color: #fff; }
+  .btn-primary { background: #7F77DD; color: #fff; }
   .btn-outline { background: transparent; color: #b8b3f0; border: 1px solid rgba(127,119,221,0.5); }
 
-  /* Section */
   section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; }
-  .section-label {
-    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--gray); margin-bottom: 0.5rem;
-  }
-  h2 {
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
-    font-weight: 700; color: #f0eeff; margin-bottom: 2.5rem;
-  }
-  .accent { color: var(--purple); }
+  .section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #888780; margin-bottom: 0.5rem; }
+  h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; color: #f0eeff; margin-bottom: 2.5rem; }
+  .accent { color: #7F77DD; }
 
-  /* Research cards */
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-  .card {
-    border-radius: 14px;
-    padding: 1.5rem;
-    border: 0.5px solid;
-    background: rgba(255,255,255,0.03);
-    transition: transform 0.2s, background 0.2s;
-  }
+  .card { border-radius: 14px; padding: 1.5rem; border: 0.5px solid; background: rgba(255,255,255,0.03); transition: transform 0.2s, background 0.2s; }
   .card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.06); }
   .card-purple { border-color: rgba(127,119,221,0.3); }
   .card-teal   { border-color: rgba(29,158,117,0.3); }
   .card-amber  { border-color: rgba(186,117,23,0.3); }
-  .card-icon {
-    width: 40px; height: 40px; border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px; margin-bottom: 1rem;
-  }
+  .card-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 1rem; }
   .card-icon-purple { background: rgba(127,119,221,0.15); }
   .card-icon-teal   { background: rgba(29,158,117,0.15); }
   .card-icon-amber  { background: rgba(186,117,23,0.15); }
   .card h3 { font-size: 15px; font-weight: 600; color: #f0eeff; margin-bottom: 0.5rem; }
   .card p  { font-size: 13px; line-height: 1.7; color: rgba(232,230,240,0.55); }
 
-  /* Projects */
   .projects-list { display: flex; flex-direction: column; gap: 18px; }
-  .project-row {
-    display: flex; gap: 1.5rem; align-items: flex-start;
-    padding: 1.25rem 1.5rem;
-    border-radius: 14px;
-    border: 0.5px solid rgba(127,119,221,0.2);
-    background: rgba(255,255,255,0.025);
-    transition: background 0.2s;
-  }
+  .project-row { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.25rem 1.5rem; border-radius: 14px; border: 0.5px solid rgba(127,119,221,0.2); background: rgba(255,255,255,0.025); transition: background 0.2s; }
   .project-row:hover { background: rgba(255,255,255,0.05); }
-  .project-year {
-    font-size: 12px; color: var(--purple); letter-spacing: 0.05em;
-    min-width: 40px; padding-top: 2px;
-  }
+  .project-year { font-size: 12px; color: #7F77DD; letter-spacing: 0.05em; min-width: 40px; padding-top: 2px; }
   .project-content h3 { font-size: 15px; font-weight: 600; color: #f0eeff; margin-bottom: 4px; }
   .project-content p  { font-size: 13px; line-height: 1.6; color: rgba(232,230,240,0.5); }
   .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-  .tag {
-    font-size: 11px; padding: 3px 10px; border-radius: 999px;
-    background: rgba(127,119,221,0.12); color: #9a95e8;
-    border: 0.5px solid rgba(127,119,221,0.2);
-  }
+  .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; background: rgba(127,119,221,0.12); color: #9a95e8; border: 0.5px solid rgba(127,119,221,0.2); }
 
-  /* CV */
-  .cv-timeline { position: relative; padding-left: 2rem; }
-  .cv-timeline::before {
-    content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
-    width: 1px; background: linear-gradient(to bottom, var(--purple), transparent);
-  }
-  .cv-item { position: relative; margin-bottom: 2rem; }
-  .cv-item::before {
-    content: ''; position: absolute; left: -2.375rem; top: 6px;
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--purple); border: 2px solid #0a0a14;
-  }
-  .cv-item-meta {
-    font-size: 12px; color: var(--purple); letter-spacing: 0.04em; margin-bottom: 4px;
-  }
-  .cv-item h3 { font-size: 15px; font-weight: 600; color: #f0eeff; margin-bottom: 2px; }
-  .cv-item p  { font-size: 13px; color: rgba(232,230,240,0.5); }
-
-  /* Contact */
-  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
-  .contact-card {
-    padding: 1.25rem 1.5rem;
+  /* CV PDF section */
+  .cv-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+  .cv-header h2 { margin-bottom: 0; }
+  .cv-pdf-wrapper {
     border-radius: 14px;
-    border: 0.5px solid rgba(127,119,221,0.2);
-    background: rgba(255,255,255,0.025);
-    text-decoration: none;
-    transition: background 0.2s, transform 0.2s;
+    border: 0.5px solid rgba(127,119,221,0.25);
+    overflow: hidden;
+    background: rgba(255,255,255,0.02);
   }
+  .cv-pdf-wrapper iframe {
+    width: 100%;
+    height: 700px;
+    border: none;
+    display: block;
+  }
+  .cv-fallback {
+    padding: 3rem 2rem;
+    text-align: center;
+    display: none;
+  }
+  .cv-fallback p { font-size: 14px; color: rgba(232,230,240,0.5); margin-bottom: 1.25rem; }
+
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .contact-card { padding: 1.25rem 1.5rem; border-radius: 14px; border: 0.5px solid rgba(127,119,221,0.2); background: rgba(255,255,255,0.025); text-decoration: none; transition: background 0.2s, transform 0.2s; display: block; }
   .contact-card:hover { background: rgba(255,255,255,0.06); transform: translateY(-2px); }
-  .contact-card-label {
-    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--gray); margin-bottom: 6px;
-  }
-  .contact-card-value {
-    font-size: 14px; font-weight: 500; color: #b8b3f0;
-  }
+  .contact-card-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #888780; margin-bottom: 6px; }
+  .contact-card-value { font-size: 14px; font-weight: 500; color: #b8b3f0; }
 
-  /* Divider */
-  .divider {
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(127,119,221,0.2), transparent);
-    margin: 0 2rem;
-  }
-
-  footer {
-    text-align: center; padding: 2rem;
-    font-size: 12px; color: rgba(232,230,240,0.25);
-    position: relative; z-index: 1;
-  }
+  .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(127,119,221,0.2), transparent); margin: 0 2rem; }
+  footer { text-align: center; padding: 2rem; font-size: 12px; color: rgba(232,230,240,0.25); position: relative; z-index: 1; }
 </style>
 </head>
 <body>
 
-<!-- Stars -->
 <div class="stars" id="stars"></div>
 
-<!-- Nav -->
 <nav>
   <div class="nav-logo">J. DeLaunay</div>
   <ul class="nav-links">
@@ -246,7 +124,6 @@
 </nav>
 
 <main>
-  <!-- Hero -->
   <section class="hero" id="about">
     <div class="hero-eyebrow">Astrophysicist</div>
     <h1>Jimmy<br><span>DeLaunay</span></h1>
@@ -262,13 +139,12 @@
     </div>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#cv" class="btn btn-outline">Download CV</a>
+      <a href="cv.pdf" class="btn btn-outline">Download CV</a>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <!-- Research Focus -->
   <section>
     <p class="section-label">Research</p>
     <h2>What I work on</h2>
@@ -293,7 +169,6 @@
 
   <div class="divider"></div>
 
-  <!-- Projects -->
   <section id="projects">
     <p class="section-label">Projects</p>
     <h2>Selected <span class="accent">work</span></h2>
@@ -303,11 +178,7 @@
         <div class="project-content">
           <h3>Swift/BAT GRB Detection Pipeline</h3>
           <p>Automated detection and rapid localization pipeline for gamma-ray burst events using the Burst Alert Telescope aboard Swift, enabling faster follow-up observations.</p>
-          <div class="project-tags">
-            <span class="tag">Swift-BAT</span>
-            <span class="tag">Python</span>
-            <span class="tag">GRBs</span>
-          </div>
+          <div class="project-tags"><span class="tag">Swift-BAT</span><span class="tag">Python</span><span class="tag">GRBs</span></div>
         </div>
       </div>
       <div class="project-row">
@@ -315,11 +186,7 @@
         <div class="project-content">
           <h3>AGN–Neutrino Correlation Study</h3>
           <p>Statistical cross-correlation of IceCube high-energy neutrino events with AGN catalogs to identify candidate sources and constrain hadronic emission models.</p>
-          <div class="project-tags">
-            <span class="tag">IceCube</span>
-            <span class="tag">AGN</span>
-            <span class="tag">Multi-messenger</span>
-          </div>
+          <div class="project-tags"><span class="tag">IceCube</span><span class="tag">AGN</span><span class="tag">Multi-messenger</span></div>
         </div>
       </div>
       <div class="project-row">
@@ -327,11 +194,7 @@
         <div class="project-content">
           <h3>GRB Afterglow Spectral Modeling</h3>
           <p>Broadband spectral fitting of GRB afterglow emission from X-ray through optical, constraining circumburst density profiles and jet structure.</p>
-          <div class="project-tags">
-            <span class="tag">Spectroscopy</span>
-            <span class="tag">X-ray Astronomy</span>
-            <span class="tag">Swift-XRT</span>
-          </div>
+          <div class="project-tags"><span class="tag">Spectroscopy</span><span class="tag">X-ray Astronomy</span><span class="tag">Swift-XRT</span></div>
         </div>
       </div>
     </div>
@@ -339,43 +202,36 @@
 
   <div class="divider"></div>
 
-  <!-- CV -->
   <section id="cv">
-    <p class="section-label">Curriculum Vitae</p>
-    <h2>Background & <span class="accent">experience</span></h2>
-    <div class="cv-timeline">
-      <div class="cv-item">
-        <div class="cv-item-meta">2021 – Present</div>
-        <h3>Postdoctoral Researcher</h3>
-        <p>Research in GRB detection and high-energy neutrino astrophysics</p>
+    <div class="cv-header">
+      <div>
+        <p class="section-label">Curriculum Vitae</p>
+        <h2>My <span class="accent">CV</span></h2>
       </div>
-      <div class="cv-item">
-        <div class="cv-item-meta">2018 – 2021</div>
-        <h3>Ph.D., Astrophysics</h3>
-        <p>Dissertation on Swift Observatory transient detection and multi-messenger counterparts</p>
-      </div>
-      <div class="cv-item">
-        <div class="cv-item-meta">2014 – 2018</div>
-        <h3>B.S., Physics & Astronomy</h3>
-        <p>Undergraduate research in high-energy astrophysics and telescope instrumentation</p>
+      <a href="cv.pdf" download class="btn btn-outline">↓ Download PDF</a>
+    </div>
+    <div class="cv-pdf-wrapper">
+      <iframe src="cv.pdf" title="Jimmy DeLaunay CV" id="cv-iframe"></iframe>
+      <div class="cv-fallback" id="cv-fallback">
+        <p>PDF preview unavailable in this browser.</p>
+        <a href="cv.pdf" download class="btn btn-primary">↓ Download CV</a>
       </div>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <!-- Contact -->
   <section id="contact">
     <p class="section-label">Contact</p>
     <h2>Get in <span class="accent">touch</span></h2>
     <div class="contact-grid">
-      <a class="contact-card" href="mailto:jjd330@psu.edu">
+      <a class="contact-card" href="mailto:jdelaunay@example.edu">
         <div class="contact-card-label">Email</div>
-        <div class="contact-card-value">jjd330@psu.edu</div>
+        <div class="contact-card-value">jdelaunay@example.edu</div>
       </a>
       <a class="contact-card" href="#">
         <div class="contact-card-label">GitHub</div>
-        <div class="contact-card-value">github.com/jjd330</div>
+        <div class="contact-card-value">github.com/jdelaunay</div>
       </a>
       <a class="contact-card" href="#">
         <div class="contact-card-label">arXiv</div>
@@ -399,26 +255,21 @@
     const s = document.createElement('div');
     s.className = 'star';
     const size = Math.random() * 2 + 0.5;
-    s.style.cssText = `
-      left: ${Math.random()*100}%;
-      top: ${Math.random()*100}%;
-      width: ${size}px;
-      height: ${size}px;
-      opacity: ${Math.random()*0.6+0.1};
-      --d: ${(Math.random()*4+2).toFixed(1)}s;
-      animation-delay: ${(Math.random()*5).toFixed(1)}s;
-    `;
+    s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;width:${size}px;height:${size}px;opacity:${(Math.random()*0.6+0.1).toFixed(2)};--d:${(Math.random()*4+2).toFixed(1)}s;animation-delay:${(Math.random()*5).toFixed(1)}s;`;
     starsEl.appendChild(s);
   }
 
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
+  });
+
+  const iframe = document.getElementById('cv-iframe');
+  iframe.addEventListener('error', () => {
+    iframe.style.display = 'none';
+    document.getElementById('cv-fallback').style.display = 'block';
   });
 </script>
 </body>
