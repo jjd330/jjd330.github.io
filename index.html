@@ -6,28 +6,14 @@
 <title>Jimmy DeLaunay — Astrophysicist</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    background: #0a0a14;
-    color: #e8e6f0;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a14; color: #e8e6f0; min-height: 100vh; overflow-x: hidden; }
   .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
   .star { position: absolute; border-radius: 50%; background: white; animation: twinkle var(--d, 3s) ease-in-out infinite alternate; }
   @keyframes twinkle { from { opacity: 0.2; } to { opacity: 1; } }
 
-  nav {
-    position: sticky; top: 0;
-    background: rgba(10,10,20,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 0.5px solid rgba(127,119,221,0.25);
-    padding: 0 2rem;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 56px; z-index: 100;
-  }
+  nav { position: sticky; top: 0; background: rgba(10,10,20,0.85); backdrop-filter: blur(12px); border-bottom: 0.5px solid rgba(127,119,221,0.25); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; z-index: 100; }
   .nav-logo { font-size: 15px; font-weight: 600; color: #b8b3f0; letter-spacing: 0.01em; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
   .nav-links a { font-size: 13px; color: rgba(232,230,240,0.6); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: #b8b3f0; }
 
@@ -77,26 +63,28 @@
   .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
   .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; background: rgba(127,119,221,0.12); color: #9a95e8; border: 0.5px solid rgba(127,119,221,0.2); }
 
-  /* CV PDF section */
+  /* Group section */
+  .group-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .group-card { border-radius: 14px; padding: 1.5rem; border: 0.5px solid rgba(127,119,221,0.2); background: rgba(255,255,255,0.025); transition: transform 0.2s, background 0.2s; }
+  .group-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.05); }
+  .group-card-top { display: flex; align-items: center; gap: 14px; margin-bottom: 1rem; }
+  .avatar { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; flex-shrink: 0; }
+  .avatar-purple { background: rgba(127,119,221,0.2); color: #b8b3f0; }
+  .avatar-teal   { background: rgba(29,158,117,0.2);  color: #6ddbb8; }
+  .avatar-coral  { background: rgba(216,90,48,0.2);   color: #f0a882; }
+  .group-card-name { font-size: 15px; font-weight: 600; color: #f0eeff; margin-bottom: 3px; }
+  .group-card-role { font-size: 12px; color: rgba(232,230,240,0.45); }
+  .group-card-desc { font-size: 13px; line-height: 1.7; color: rgba(232,230,240,0.55); margin-bottom: 0.85rem; }
+  .group-badge { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+  .badge-grad  { background: rgba(127,119,221,0.15); color: #b8b3f0; border: 0.5px solid rgba(127,119,221,0.3); }
+  .badge-ugrad { background: rgba(29,158,117,0.15);  color: #6ddbb8; border: 0.5px solid rgba(29,158,117,0.3); }
+
+  /* CV */
   .cv-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
   .cv-header h2 { margin-bottom: 0; }
-  .cv-pdf-wrapper {
-    border-radius: 14px;
-    border: 0.5px solid rgba(127,119,221,0.25);
-    overflow: hidden;
-    background: rgba(255,255,255,0.02);
-  }
-  .cv-pdf-wrapper iframe {
-    width: 100%;
-    height: 700px;
-    border: none;
-    display: block;
-  }
-  .cv-fallback {
-    padding: 3rem 2rem;
-    text-align: center;
-    display: none;
-  }
+  .cv-pdf-wrapper { border-radius: 14px; border: 0.5px solid rgba(127,119,221,0.25); overflow: hidden; background: rgba(255,255,255,0.02); }
+  .cv-pdf-wrapper iframe { width: 100%; height: 700px; border: none; display: block; }
+  .cv-fallback { padding: 3rem 2rem; text-align: center; display: none; }
   .cv-fallback p { font-size: 14px; color: rgba(232,230,240,0.5); margin-bottom: 1.25rem; }
 
   .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
@@ -118,6 +106,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#group">Group</a></li>
     <li><a href="#cv">CV</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -202,6 +191,53 @@
 
   <div class="divider"></div>
 
+  <!-- Group -->
+  <section id="group">
+    <p class="section-label">Research Group</p>
+    <h2>The <span class="accent">team</span></h2>
+    <div class="group-grid">
+
+      <div class="group-card">
+        <div class="group-card-top">
+          <div class="avatar avatar-purple">VL</div>
+          <div>
+            <div class="group-card-name">Victor Liu</div>
+            <div class="group-card-role">Since Fall 2025</div>
+          </div>
+        </div>
+        <p class="group-card-desc">X-ray studies of local active galactic nuclei, probing the environments of nearby supermassive black holes.</p>
+        <span class="group-badge badge-grad">Ph.D. student</span>
+      </div>
+
+      <div class="group-card">
+        <div class="group-card-top">
+          <div class="avatar avatar-teal">KF</div>
+          <div>
+            <div class="group-card-name">Kate Foyle</div>
+            <div class="group-card-role">Graduating Spring 2026</div>
+          </div>
+        </div>
+        <p class="group-card-desc">Constructing time-resolved hard X-ray spectra of transient sources using Swift-BAT data.</p>
+        <span class="group-badge badge-ugrad">Undergraduate</span>
+      </div>
+
+      <div class="group-card">
+        <div class="group-card-top">
+          <div class="avatar avatar-coral">PR</div>
+          <div>
+            <div class="group-card-name">Peyton Rosendahl</div>
+            <div class="group-card-role">Graduating Spring 2027</div>
+          </div>
+        </div>
+        <p class="group-card-desc">Setting long-trend upper limits to GRB-like emission using Swift-BAT and Fermi-GBM observations.</p>
+        <span class="group-badge badge-ugrad">Undergraduate</span>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
   <section id="cv">
     <div class="cv-header">
       <div>
@@ -258,14 +294,12 @@
     s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;width:${size}px;height:${size}px;opacity:${(Math.random()*0.6+0.1).toFixed(2)};--d:${(Math.random()*4+2).toFixed(1)}s;animation-delay:${(Math.random()*5).toFixed(1)}s;`;
     starsEl.appendChild(s);
   }
-
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
-
   const iframe = document.getElementById('cv-iframe');
   iframe.addEventListener('error', () => {
     iframe.style.display = 'none';
