@@ -63,7 +63,6 @@
   .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
   .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; background: rgba(127,119,221,0.12); color: #9a95e8; border: 0.5px solid rgba(127,119,221,0.2); }
 
-  /* Group section */
   .group-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
   .group-card { border-radius: 14px; padding: 1.5rem; border: 0.5px solid rgba(127,119,221,0.2); background: rgba(255,255,255,0.025); transition: transform 0.2s, background 0.2s; }
   .group-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.05); }
@@ -72,6 +71,7 @@
   .avatar-purple { background: rgba(127,119,221,0.2); color: #b8b3f0; }
   .avatar-teal   { background: rgba(29,158,117,0.2);  color: #6ddbb8; }
   .avatar-coral  { background: rgba(216,90,48,0.2);   color: #f0a882; }
+  .avatar-amber  { background: rgba(186,117,23,0.2);  color: #f5c96a; }
   .group-card-name { font-size: 15px; font-weight: 600; color: #f0eeff; margin-bottom: 3px; }
   .group-card-role { font-size: 12px; color: rgba(232,230,240,0.45); }
   .group-card-desc { font-size: 13px; line-height: 1.7; color: rgba(232,230,240,0.55); margin-bottom: 0.85rem; }
@@ -79,7 +79,6 @@
   .badge-grad  { background: rgba(127,119,221,0.15); color: #b8b3f0; border: 0.5px solid rgba(127,119,221,0.3); }
   .badge-ugrad { background: rgba(29,158,117,0.15);  color: #6ddbb8; border: 0.5px solid rgba(29,158,117,0.3); }
 
-  /* CV */
   .cv-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
   .cv-header h2 { margin-bottom: 0; }
   .cv-pdf-wrapper { border-radius: 14px; border: 0.5px solid rgba(127,119,221,0.25); overflow: hidden; background: rgba(255,255,255,0.02); }
@@ -191,7 +190,6 @@
 
   <div class="divider"></div>
 
-  <!-- Group -->
   <section id="group">
     <p class="section-label">Research Group</p>
     <h2>The <span class="accent">team</span></h2>
@@ -233,6 +231,18 @@
         <span class="group-badge badge-ugrad">Undergraduate</span>
       </div>
 
+      <div class="group-card">
+        <div class="group-card-top">
+          <div class="avatar avatar-amber">BR</div>
+          <div>
+            <div class="group-card-name">Braden Reeves</div>
+            <div class="group-card-role">Graduating Spring 2027</div>
+          </div>
+        </div>
+        <p class="group-card-desc">AGN spectral studies with NuSTAR, characterizing hard X-ray emission from active galactic nuclei.</p>
+        <span class="group-badge badge-ugrad">Undergraduate</span>
+      </div>
+
     </div>
   </section>
 
@@ -261,22 +271,22 @@
     <p class="section-label">Contact</p>
     <h2>Get in <span class="accent">touch</span></h2>
     <div class="contact-grid">
-      <a class="contact-card" href="mailto:jdelaunay@example.edu">
+      <a class="contact-card" href="mailto:jjd330@psu.edu">
         <div class="contact-card-label">Email</div>
-        <div class="contact-card-value">jdelaunay@example.edu</div>
+        <div class="contact-card-value">jjd330@psu.edu</div>
       </a>
       <a class="contact-card" href="#">
         <div class="contact-card-label">GitHub</div>
-        <div class="contact-card-value">github.com/jdelaunay</div>
+        <div class="contact-card-value">github.com/jjd330</div>
       </a>
       <a class="contact-card" href="#">
-        <div class="contact-card-label">arXiv</div>
-        <div class="contact-card-value">arxiv.org/a/delaunay</div>
+        <div class="contact-card-label">Google Scholar</div>
+        <div class="contact-card-value">https://scholar.google.com/citations?user=ok-M3iEAAAAJ&hl=en&oi=ao</div>
       </a>
-      <a class="contact-card" href="#">
+      <!-- <a class="contact-card" href="#">
         <div class="contact-card-label">NASA ADS</div>
         <div class="contact-card-value">Search publications</div>
-      </a>
+      </a> -->
     </div>
   </section>
 </main>
